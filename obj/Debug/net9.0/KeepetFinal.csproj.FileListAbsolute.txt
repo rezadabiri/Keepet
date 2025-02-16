@@ -572,3 +572,4 @@ C:\Users\dabir\source\repos\KeepetFinal\obj\Debug\net9.0\refint\KeepetFinal.dll
 C:\Users\dabir\source\repos\KeepetFinal\obj\Debug\net9.0\KeepetFinal.pdb
 C:\Users\dabir\source\repos\KeepetFinal\obj\Debug\net9.0\KeepetFinal.genruntimeconfig.cache
 C:\Users\dabir\source\repos\KeepetFinal\obj\Debug\net9.0\ref\KeepetFinal.dll
+C:\Users\dabir\source\repos\KeepetFinal\obj\Debug\net9.0\KeepetFinal.sourcelink.json

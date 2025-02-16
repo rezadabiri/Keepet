@@ -34,6 +34,13 @@ builder.Services.AddControllers()
     });
 
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder => builder.AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader());
+});
 
 builder.Services.AddRazorPages();
 
@@ -59,6 +66,7 @@ using (var scope = app.Services.CreateScope())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseCors("AllowAllOrigins");
 
 app.UseRouting();
 
