@@ -1,0 +1,40 @@
+﻿@using KeepetFinal.Models.Entities
+@model Pet
+
+@{
+    ViewData["Title"] = "اضافه کردن حیوان جدید";
+}
+
+<div class="container">
+    <h2 class="mb-4">اضافه کردن حیوان جدید</h2>
+
+    <form asp-action="Create" method="post" asp-controller="Pets">
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">نام</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Type" class="form-label">نوع حیوان</label>
+            <input asp-for="Type" class="form-control" />
+            <span asp-validation-for="Type" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Breed" class="form-label">نژاد</label>
+            <input asp-for="Breed" class="form-control" />
+            <span asp-validation-for="Breed" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Age" class="form-label">سن</label>
+            <input asp-for="Age" type="number" class="form-control" />
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Weight" class="form-label">وزن</label>
+            <input asp-for="Weight" type="number" step="0.01" class="form-control" />
+            <span asp-validation-for="Weight" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-success">ذخیره</button>
+        <a href="@Url.Action("Index", "Pets")" class="btn btn-secondary">بازگشت</a>
+    </form>
+</div>

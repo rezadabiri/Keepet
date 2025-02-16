@@ -1,0 +1,46 @@
+﻿@using KeepetFinal.Models.Entities
+@model IEnumerable<Pet>
+
+@{
+    ViewData["Title"] = "لیست حیوانات خانگی";
+}
+
+<div class="container">
+    <h2 class="mb-4">لیست حیوانات خانگی</h2>
+
+    <a href="@Url.Action("Create", "Pets")" class="btn btn-primary mb-3">اضافه کردن حیوان جدید</a>
+    @if (Model != null)
+    {
+        
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>نام</th>
+                <th>نوع</th>
+                <th>نژاد</th>
+                <th>سن</th>
+                <th>وزن</th>
+                <th>عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pet in Model)
+            {
+                <tr>
+                    <td>@pet.Name</td>
+                    <td>@pet.Type</td>
+                    <td>@pet.Breed</td>
+                    <td>@pet.Age</td>
+                    <td>@pet.Weight</td>
+                    <td>
+                        <a href="@Url.Action("Details", "Pets", new { id = pet.Id })" class="btn btn-info btn-sm">مشاهده</a>
+                        <a href="@Url.Action("Edit", "Pets", new { id = pet.Id })" class="btn btn-warning btn-sm">ویرایش</a>
+                        <a href="@Url.Action("Delete", "Pets", new { id = pet.Id })" class="btn btn-danger btn-sm">حذف</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    }
+</div>

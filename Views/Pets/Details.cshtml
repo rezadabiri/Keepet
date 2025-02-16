@@ -1,0 +1,35 @@
+﻿@using KeepetFinal.Models.Entities
+@model Pet
+
+@{
+    ViewData["Title"] = "جزئیات حیوان";
+}
+
+<div class="container">
+    <h2 class="mb-4">جزئیات حیوان خانگی</h2>
+
+    <table class="table">
+        <tr>
+            <th>نام</th>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <th>نوع</th>
+            <td>@Model.Type</td>
+        </tr>
+        <tr>
+            <th>نژاد</th>
+            <td>@Model.Breed</td>
+        </tr>
+        <tr>
+            <th>سن</th>
+            <td>@Model.Age</td>
+        </tr>
+        <tr>
+            <th>وزن</th>
+            <td>@Model.Weight</td>
+        </tr>
+    </table>
+
+    <a href="@Url.Action("Index", "Pets")" class="btn btn-secondary">بازگشت</a>
+</div>
